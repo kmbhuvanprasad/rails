@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>my page </title>
+</head>
+<body>
+	<%= form_for :user do |u| %>
+<p>
+	<%= u.label :Firstname %><br>
+	<%= u.text_field :Firstname %>
+</p>
+<p>
+	<%= u.label :Lastname %><br>
+	<%= u.text_field :Lastname %> 
+</p>
+<p>
+	<%= u.label :Email%><br>
+	<%= u.text_field :Email %> 
+</p>
+<p>
+	<%= u.label :Password%><br>
+	<%= u.text_field :Password %> 
+</p>
+<p>
+	<%= u.submit%>
+</p>
+<% end %>
+</body>
+</html>
+
+
+
+
