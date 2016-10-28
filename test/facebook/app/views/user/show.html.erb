@@ -1,0 +1,23 @@
+
+<h1 align="center"> Profile page </h1>
+<table border="1px">
+<style type="text/css">
+	body {background-color: grey;}
+</style>
+<tr>
+	<th>Firstname </th> 
+	<th>Lastname  </th>
+	<th>Email  </th>
+	<th> Editing option </th>
+	<th> Updating option</th>
+</tr>
+
+<tr>
+<td><%= @user.Firstname %></td>
+<td><%= @user.Lastname %></td>
+<td><%=@user.Email %></td> 
+
+<td><%= link_to "Edit", user_edit_path(@user)%></td>
+<td><%= link_to "Update", user_edit_path(@user)%></td>
+</tr>
+</table>

@@ -9,11 +9,11 @@
 <tr>
 <td><%= user.Firstname %></td>
 <td><%= user.Lastname %></td>
-<td><%=  user.Email%></td>
+<td><%= user.Email%></td>
 
 <td><%= link_to "Edit", user_edit_path(user)%></td>
 <td><%= link_to "Destroy" ,user_destroy_path(user),method: :delete, data: {confirm:'are you sure?'} %></td>
-
+<td><%= link_to "Profile", user_show_path(user)%></td>
 </tr>
 <%end%>
 </table>

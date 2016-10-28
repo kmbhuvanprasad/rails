@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
  get "/user/new" => "user#new", as: :user_new
 
- post "user/new" => "user#create", as: :user_create
+ post "/user/new" => "user#create", as: :users
 
  get "user/list" => "user#index", as: :user_index
 
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
  put "/user/:id/edit" => "user#update", as: :user_update
 
  delete "user/:id" => "user#destroy", as: :user_destroy
+
+ get "user/:id/show" => "user#show", as: :user_show
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

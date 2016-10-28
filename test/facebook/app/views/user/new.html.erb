@@ -3,31 +3,54 @@
 <head>
 	<title>my page </title>
 </head>
+<style type="text/css">
+	body {background-color: powderblue;}
+</style>
 <body>
-	<%= form_for :user do |u| %>
+<h1> Sign up</h1>
+	<%= form_for @user, url: users_path do |u| %>
+
+		<% if @user.errors.any? %>
+		    <div id="error_explanation">
+		      <h2>
+		        <%= pluralize(@user.errors.count, "error") %> prohibited
+		        this user from being saved:
+		      </h2>
+		      <ul>
+		        <% @user.errors.full_messages.each do |msg| %>
+		          <li><%= msg %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+  		<% end %>
+
 <p>
 	<%= u.label :Firstname %><br>
 	<%= u.text_field :Firstname %>
 </p>
+
 <p>
 	<%= u.label :Lastname %><br>
 	<%= u.text_field :Lastname %> 
 </p>
+
 <p>
 	<%= u.label :Email%><br>
 	<%= u.text_field :Email %> 
 </p>
+
 <p>
 	<%= u.label :Password%><br>
 	<%= u.password_field :password %> 
 </p>
+
 <p>
 	<%= u.submit%>
 </p>
+
 <% end %>
 </body>
 </html>
-
 
 
 
